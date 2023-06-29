@@ -92,7 +92,7 @@ export default {
     border-bottom: 1px solid #E2E2E2;
   }
   .product-list-item-wrapper{
-    height: 174px;
+    max-height: 174px;
     overflow-y: scroll;
   }
   .product-list-item-disable div{
