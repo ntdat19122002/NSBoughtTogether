@@ -1,0 +1,81 @@
+*{
+    font-size: 14px;
+    font-family: "Inter";
+    color: #000000;
+    overflow: hidden;
+}
+
+input{
+    border: 1px solid #E2E2E2;
+    border-radius: 6px;
+    padding: 5px 5px 5px 15px;
+}
+select{
+    border: 1px solid #E2E2E2;
+    border-radius: 6px;
+    padding: 7px 6px 7px 15px;
+    background: white;
+}
+.flex{
+    display: flex;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar{
+    width: 6px;
+    padding: 0;
+}
+::-webkit-scrollbar-track {
+    background: white;
+    padding: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #BFBFBF;
+    border-radius: 5px;
+    padding: 0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+/*Bundle process*/
+.add-product-process a{
+    color:black;
+}
+
+.add-product-process{
+    display: flex;
+    float: right;
+    margin: 11px 30px 0;
+}
+
+.add-product-process>div{
+    cursor: pointer;
+    min-width: 62px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px;
+    background: #E2E2E2;
+    border-radius: 4px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 0 12px;
+}
+
+.add-product-process div:nth-child(2){
+    font-weight: 700;
+}
