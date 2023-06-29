@@ -1,7 +1,7 @@
 <template>
   <div class="content">
-    <div class="welcome">WELCOME, CHLOE NGUYEN!</div>
-<!--      Todo: Hiển thị tên người dùng-->
+    <div class="welcome">WELCOME, {{user_name}}!</div>
+<!--      Todo: Hiển thị tên người dùng 🤟-->
     <div class="product-list">
       <!-- Header -->
       <div class="product-list-header product-list-row">
@@ -41,6 +41,7 @@ export default {
   components: {Switch},
   data(){
     return{
+      user_name: window.app_settings['user_name'],
       widgets:[]
     }
   },
