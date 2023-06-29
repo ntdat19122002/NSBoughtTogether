@@ -112,7 +112,7 @@
           <!-- Header -->
           <div class="product-list-header product-list-row">
             <div class="check-box">
-              <input type="checkbox">
+              <input @change="excludedToggleCheckbox" v-model="excluded_check_all" type="checkbox">
             </div>
             <div class="image">
               Image
@@ -187,6 +187,11 @@ export default {
         product.check = this.check_all
       }
     },
+    excludedToggleCheckbox(){
+      for(let product of this.excluded_products){
+        product.check = this.check_all
+      }
+    },
     openNotification() {
       notification.open({
         message: 'You have reach the product limitation.',
@@ -213,7 +218,7 @@ export default {
     }
   },
   watch: {
-    products:{
+    'products':{
       handler(newProducts){
         let count = 0
         for(let product of newProducts){
