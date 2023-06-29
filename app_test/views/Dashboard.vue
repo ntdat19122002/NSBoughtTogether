@@ -1,6 +1,7 @@
 <template>
   <div class="content">
     <div class="welcome">WELCOME, CHLOE NGUYEN!</div>
+<!--      Todo: Hiển thị tên người dùng-->
     <div class="product-list">
       <!-- Header -->
       <div class="product-list-header product-list-row">

@@ -11,7 +11,11 @@ import json
 
 class ShopifyController(http.Controller):
     @http.route('/shopify/auth2', auth='public')
+    #Todo: Sửa router thành /shopify/<tên app>/auth
     def shopify_auth2(self, **kw):
+        #Todo: Viết thêm view trong setting để điền shopify api, secret, api version
+        #Todo: Bổ xung view modal backend để quản lý dữ liệu với quyền admin
+        #Todo: Bổ xung security
         api_version = request.env['ir.config_parameter'].sudo().get_param('shopify_api_version')
         shopify_key = request.env['ir.config_parameter'].sudo().get_param('shopify_key')
         shopify_secret = request.env['ir.config_parameter'].sudo().get_param('shopify_secret')
@@ -36,6 +40,7 @@ class ShopifyController(http.Controller):
         return werkzeug.utils.redirect(auth_url)
 
     @http.route('/shopify/callback', autgeth="public", type="http", cors="*")
+    # Todo: Sửa router thành /shopify/<tên app>/finalize
     def shopify_callback(self,**kw):
         api_version = request.env['ir.config_parameter'].sudo().get_param('shopify_api_version')
         shopify_key = request.env['ir.config_parameter'].sudo().get_param('shopify_key')
@@ -60,8 +65,10 @@ class ShopifyController(http.Controller):
                 'token':access_token
             })
 
-
+        #Todo: Check chưa có webhook mới đẩy webhook mới
+        #Todo: Thiếu webhook uninstall
         self.make_webhook()
+        # Todo: Check chưa có script tag mới đẩy webhook mới
         self.make_script_tag()
 
         return werkzeug.utils.redirect('/app/bought_together')
